@@ -1,4 +1,7 @@
 # crossy-road
 Replicating the video game crossy road in Python.
 I could do this in turtle graphics or shell, I will probably start with shell.
-# how it could be done
+# How it could be done
+I could set up a bunch of lanes, and then have randomized objects with randomized positions, which would update every second
+I could follow the template of grocery store game
+
