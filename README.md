@@ -10,6 +10,8 @@
 - I have made a function called printlanes, which prints the lanes and the content.
 - I have also made a function called refreshlanecontent which refreshed the lane content by sliding out the last space content and the concatinating the new content to the begining and pushing the rest of the content down a space. this works finefine for the first two pushed, and then the objects stop moving.
 # What's left to do
-- I have to get all the objects doing, and then after I do that, stuff shoudl be pretty easy
-- add a person who is crossing the road. 
-- 
+- I have to get all the objects doing, and then after I do that, stuff should be pretty easy
+- add a person who is crossing the road 
+- have an algorithm that detects whether positionobstacle == positionperson
+- randomize object location and speed of obstacles
+- make different levels with different difficulties
