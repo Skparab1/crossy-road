@@ -15,3 +15,4 @@
 - have an algorithm that detects whether positionobstacle == positionperson
 - randomize object location and speed of obstacles
 - make different levels with different difficulties
+- have a highscore board, stored by text file shelving
