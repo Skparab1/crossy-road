@@ -8,4 +8,4 @@
 # What's done so far
 - So far, in the code in the repository, there are lanes, with two objects moving so far.
 - I have made a function called printlanes, which prints the lanes and the content.
-- I have also made a function called refreshlanecontent
+- I have also made a function called refreshlanecontent which refreshed the lane content by sliding out the last space content and the concatinating the new content to the begining and pushing the rest of the content down a space. this works finefine for the first two pushed, and then it stops.
