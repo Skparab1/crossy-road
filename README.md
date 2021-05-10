@@ -7,5 +7,5 @@
 - However, there would need to be 35+ objects moving on the screen, which may cause slowness, spotty animation, and excessive blinking
 # What's done so far
 - So far, in the code in the repository, there are lanes, with two objects moving so far.
-I have made a function called printlanes, which prints the lanes and the content.
-I have laso made a procedure
+- I have made a function called printlanes, which prints the lanes and the content.
+- I have also made a function called refreshlanecontent
