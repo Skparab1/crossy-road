@@ -10,6 +10,7 @@ print(' 1. Press control+c to move foreward')
 print(' 2. When you hit an obstacle the game will end\n\n')
 name = input('enter your name ')
 def printlanes(content1, content2, content3,b1,b2):
+    global score
     print('-'*125,'\n\n'), print('-'*125,'\n\n'), print('-'*125),print(content3), print(content3),print('-'*125),print(b2),print(b2),print('-'*125),print(content2), print(content2), print('-'*125),print(b1),print(b1),print('-'*125),print(content1), print(content1), print('-'*125)
 def refreshlanecontent(newcontent, lanecontent):
     global lost
@@ -34,6 +35,7 @@ def addguytolanecontent(lanecontent):
     return final
 print(12 * ('\n\n'+('-'*125)))
 inlane = 0
+score = 50
 one = True
 lost = False
 spaces = str(' '*125)
@@ -45,26 +47,38 @@ printlanes(lane1,lane2,lane3,'','')
 while True:
     try:
         randomizer = randint(1,6)
+        rand = randint(1,14)
+        rand = '=' if rand == 1 else ('?' if rand == 2 else ('$' if rand == 3 else ('<>' if rand == 4 else ('|' if rand == 5 else ('-' if rand == 6 else ('+' if rand == 7 else ('W' if rand == 8 else ('<' if rand == 9 else ('~' if rand == 10 else ('{' if rand == 11 else ('[' if rand == 12 else ('!' if rand == 13 else 'K'))))))))))))
         add1,add2,add3,add4,add5 = ' ',' ',' ',' ',' '
         if randomizer == 1:
-            add1 = '='
+            add1 = rand
+            add2 = rand
         if randomizer == 2:
-            add2 = '?'
+            add2 = rand
+            add3 = rand
         if randomizer == 3:
-            add3 = '$'
+            add3 = rand
+            add4 = rand
         if randomizer == 4:
-            add4 = '>'
+            add4 = rand
+            add1 = rand
         lane1, lane2, lane3, lane4, lane5 = refreshlanecontent(add1,lane1), refreshlanecontent(add2,lane2), refreshlanecontent(add3,lane3), refreshlanecontent(add4,lane4), refreshlanecontent(add5,lane5)
         if counter >= 60:
             printlanes(lane1,lane2,lane3,b1,b2)
             if inlane == 0: 
                 print(' ' * 65, ' (--)\n',' ' * 65,'(--)')
+                print(score)
             else:
-                print('\n')
+                print('Score')
+                print(score)
             time.sleep(0.25)
+        if score <= 0:
+            lost == True
+            print('You have run out of time')
         if lost == True:
             break
         counter += 1
+        score += 1
     except(KeyboardInterrupt, SystemExit):
         #move foreward
         if inlane == 0:
@@ -94,6 +108,10 @@ while True:
             inlane += 1
             b3 = removeguyfromlane(b3)
             lane4 = addguytolanecontent(lane4)
-            
+        if inlane >= 6:
+            lane4 = removeguyfromlane(lane4)
+            inlane = 0
+        score += 100
 print('you have lost')
+print('your score was ', round(score,0))
 #highscore board
