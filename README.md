@@ -1,4 +1,4 @@
-# crossy-road
+# Crossy-road
 - Replicating the video game crossy road in Python.
 - done in Python shell
 # Crossy Road
@@ -13,3 +13,7 @@
 - Press control + c to move foreward
 - if you hit an object, you lose
 - score is calculated by 50 - seconds passed + (100 x times jumped)
+# What is to be done
+- have multiple lanes one after another without break
+- have stream with logs that the users must use.
+- have objects moving in opposite directions.
