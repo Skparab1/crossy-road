@@ -11,4 +11,4 @@
 - Experimental version of crossy road
 - The lanes will move towards the user when he moves
 - game has 5 levels which change the speed and frequency of obstacles
-- high score board is not done.
+- high score board is now done, with text file storage using shelve
