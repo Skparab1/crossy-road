@@ -48,6 +48,7 @@ def addguytolanecontent(lanecontent):
     final = firstpart + '(--)' + secondpart
     return final
 choice = ''
+skipped = 'yep'
 while choice != 'q':
     clearscreen()
     print('Crossy Road'), print('___________\n\n'), print('How to play'), print(' 1. Press control+c to move foreward'), print(' 2. When you hit an obstacle the game will end\n\n'), print(' Select a level\n'), print(' Easy * Medium * Hard * Very hard * Xpert')
@@ -125,6 +126,10 @@ while choice != 'q':
             counter += 1
             score -= 1
         except(KeyboardInterrupt, SystemExit):
+            if skipped == 'nope':
+                input('you jumped too many times')
+                break
+            skipped = 'nope'
             if inlane == 0:
                 inlane += 1
                 lanerender = 1
@@ -159,15 +164,24 @@ while choice != 'q':
                 lanerender = 0
                 inlane = 0
             score += 100
-    print('you have lost')
-    print('your score was ', round(score,0))
-    toadd = name + (' '*(20-len(name))) + str(score) + '\n'
-    try:
-        shelveappend('crossyrdscores', toadd)
-    except:
-        shelvewrite('crossyrdscores', toadd)
-    print('\n\n Scoreboard: ')
-    print(shelveread('crossyrdscores'))
-    choice = input('Press enter to return to the main menu. Press q and enter to quit  ')
-    if choice == 'scoreboard.clear':
-        shelvewrite('crossyrdscores', '')
+            skipped = 'yep'
+    appended = False
+    while True:
+        try:
+            print('you have lost')
+            print('your score was ', round(score,0))
+            toadd = name + (' '*(20-len(name))) + str(score) + '\n'
+            if appended == False:
+                try:
+                    shelveappend('crossyrdscores', toadd)
+                except:
+                    shelvewrite('crossyrdscores', toadd)
+                appended = True
+            print('\n\n Scoreboard: ')
+            print(shelveread('crossyrdscores'))
+            choice = input('Press enter to return to the main menu. Press q and enter to quit  ')
+            if choice == 'scoreboard.clear':
+                shelvewrite('crossyrdscores', '')
+            break
+        except:
+            blank = ''
