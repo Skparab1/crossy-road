@@ -20,5 +20,5 @@
 - if you hold control + c then you never lose (SOLVED)
 - if you keep on holding control c when you lose, program crashes (SOLVED)
 - if you keep holding control c when you lose, it adds you name and score to the scoreboard multiple times (SOLVED)
-
+![image](https://user-images.githubusercontent.com/71990977/118584025-e73e1300-b74a-11eb-8d44-74b014707263.png)
 ![](crossy_road_demo.gif)
