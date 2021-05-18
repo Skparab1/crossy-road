@@ -1,6 +1,8 @@
 # Crossy-road
 - Replicating the video game crossy road in Python.
 - done in Python shell
+# Crossy road demo:
+![image](https://user-images.githubusercontent.com/71990977/118584025-e73e1300-b74a-11eb-8d44-74b014707263.png)
 # Crossy Road
 - Version of crossy road with only one level, when the user gets to the end of the display he will come back to the start of the display.
 # Crossy Road experimental
@@ -20,5 +22,3 @@
 - if you hold control + c then you never lose (SOLVED)
 - if you keep on holding control c when you lose, program crashes (SOLVED)
 - if you keep holding control c when you lose, it adds you name and score to the scoreboard multiple times (SOLVED)
-![image](https://user-images.githubusercontent.com/71990977/118584025-e73e1300-b74a-11eb-8d44-74b014707263.png)
-![](crossy_road_demo.gif)
