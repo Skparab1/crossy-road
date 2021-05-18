@@ -2,7 +2,7 @@
 - Replicating the video game crossy road in Python.
 - done in Python shell
 # Crossy road demo:
-![image](https://user-images.githubusercontent.com/71990977/118584025-e73e1300-b74a-11eb-8d44-74b014707263.png)
+![gif](https://user-images.githubusercontent.com/71990977/118584025-e73e1300-b74a-11eb-8d44-74b014707263.png)
 # Crossy Road
 - Version of crossy road with only one level, when the user gets to the end of the display he will come back to the start of the display.
 # Crossy Road experimental
