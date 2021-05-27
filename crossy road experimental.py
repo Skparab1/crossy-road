@@ -51,9 +51,15 @@ choice = ''
 skipped = 'yep'
 while choice != 'q':
     clearscreen()
-    print('Crossy Road'), print('___________\n\n'), print('How to play'), print(' 1. Press control+c to move foreward'), print(' 2. When you hit an obstacle the game will end\n\n'), print(' Select a level\n'), print(' Easy * Medium * Hard * Very hard * Xpert')
+    print('Crossy Road'), print('___________\n\n'), print('How to play'), print(' 1. Press control+c to move foreward'), print(' 2. When you hit an obstacle the game will end\n\n'), print(' Select a level or type s for scoreboard\n'), print(' Easy * Medium * Hard * Very hard * Xpert * Scoreboard')
     level = input('\n Type the first letter of your choice ')
     level = level.lower()
+    if 's' in level:
+        print(shelveread('crossyrdscores'))
+        input('press enter to continue'), clearscreen()
+        print('Crossy Road'), print('___________\n\n'), print('How to play'), print(' 1. Press control+c to move foreward'), print(' 2. When you hit an obstacle the game will end\n\n'), print(' Select a level\n'), print(' Easy * Medium * Hard * Very hard * Xpert')
+        level = input('\n Type the first letter of your choice ')
+        level = level.lower()
     level = 'Easy' if 'e' in level else ('Medium' if 'm' in level else ('Hard' if 'h' in level else ('Very hard' if 'v' in level else ('Xpert' if 'x' in level else 'Easy'))))
     level = level.lower()
     waittime = 0.33 if 'easy' in level else (0.25 if 'medium' in level else (0.2 if 'hard' in level else (0.15 if 'very hard' in level else (0.12))))
@@ -170,6 +176,7 @@ while choice != 'q':
         try:
             print('you have lost')
             print('your score was ', round(score,0))
+            readbefore = shelveread('crossyrdscores')
             toadd = name + (' '*(20-len(name))) + str(score) + '\n'
             if appended == False:
                 try:
@@ -182,6 +189,8 @@ while choice != 'q':
             choice = input('Press enter to return to the main menu. Press q and enter to quit  ')
             if choice == 'scoreboard.clear':
                 shelvewrite('crossyrdscores', '')
+            if choice == 'scoreboard.dontsave':
+                shelvewrite('crossyrdscores', readbefore)
             break
         except:
             blank = ''
