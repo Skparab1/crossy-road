@@ -174,6 +174,7 @@ while choice != 'q':
     appended = False
     while True:
         try:
+            clearscreen()
             print('you have lost')
             print('your score was ', round(score,0))
             readbefore = shelveread('crossyrdscores')
@@ -186,11 +187,18 @@ while choice != 'q':
                 appended = True
             print('\n\n Scoreboard: ')
             print(shelveread('crossyrdscores'))
-            choice = input('Press enter to return to the main menu. Press q and enter to quit  ')
+            print('Press enter to return to the main menu. Press q and enter to quit  ')
+            choice = input('you can also enter an override command like scoreboard.clear or scoreboard.dontsave\n')
             if choice == 'scoreboard.clear':
                 shelvewrite('crossyrdscores', '')
+                print('scoreboard shown below. press enter to continue')
+                print(shelveread('crossyrdscores'))
+                input()
             if choice == 'scoreboard.dontsave':
                 shelvewrite('crossyrdscores', readbefore)
+                print('scoreboard shown below. press enter to continue')
+                print(shelveread('crossyrdscores'))
+                input()
             break
         except:
             blank = ''
