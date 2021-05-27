@@ -54,7 +54,7 @@ while choice != 'q':
     print('Crossy Road'), print('___________\n\n'), print('How to play'), print(' 1. Press control+c to move foreward'), print(' 2. When you hit an obstacle the game will end\n\n'), print(' Select a level\n'), print(' Easy * Medium * Hard * Very hard * Xpert')
     level = input('\n Type the first letter of your choice ')
     level = level.lower()
-    level = 'Easy' if 'e' in level else ('Medium' if 'm' in level else ('Hard' if 'h' in level else ('Very hard' if 'v' in level else ('Xpert'))))
+    level = 'Easy' if 'e' in level else ('Medium' if 'm' in level else ('Hard' if 'h' in level else ('Very hard' if 'v' in level else ('Xpert' if 'x' in level else 'Easy'))))
     level = level.lower()
     waittime = 0.33 if 'easy' in level else (0.25 if 'medium' in level else (0.2 if 'hard' in level else (0.15 if 'very hard' in level else (0.12))))
     clearscreen(), print('Crossy Road')
