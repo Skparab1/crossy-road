@@ -1,6 +1,5 @@
 # Crossy-road
 - Replicating the video game crossy road in Python.
-- done in Python shell
 # Crossy road demo:
 ![](crossy_road_demo.gif)
 # Crossy Road
